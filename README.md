@@ -10,7 +10,7 @@ A Python desktop prototype for **token-level language identification** in Hindi-
 - English decision threshold tuned on a development split.
 - Export predictions to CSV and copy an analysis summary.
 - One-click Windows launcher.
-- Training, validation, tuning and evaluation scripts included.
+- Pre-trained model included, so the desktop app can be tried without downloading the training corpora.
 
 ## Demo input
 
@@ -28,38 +28,60 @@ Example token labels from the included model:
 | help | English |
 | chahiye | Hindi |
 
+## Project structure
+
+```text
+Hinglish-NLP-Classifier/
+├── hinglish_desktop_app.py
+├── Launch_Hinglish_Classifier.bat
+├── models/
+│   ├── comi_lingua_dev_tuned_augmented.joblib
+│   ├── comi_lingua_augmented_final_test_report.json
+│   └── comi_lingua_dev_tuning_augmented_report.json
+├── data/README.md
+├── download_comi_lingua.py
+├── convert_comi_lingua.py
+├── make_comi_dev_split.py
+├── remove_train_test_overlap.py
+├── validate_comi_processed.py
+├── train_comi_lingua_model.py
+├── augment_comi_fit_with_local_data.py
+├── tune_comi_english_precision_augmented.py
+├── evaluate_comi_lingua_augmented_final.py
+└── requirements.txt
+```
+
 ## Run on Windows
 
-**Requirements:** Python 3.11+ (64-bit) and Tkinter.
+**Requirements:** Python 3.11+ (64-bit) and Tkinter. Tkinter is included with most standard Windows Python installations.
 
-1. Clone or download this repository.
-2. Add the trained model checkpoint at `models/comi_lingua_dev_tuned_augmented.joblib`. The binary checkpoint is distributed in the companion GitHub-ready ZIP, but is not stored in this repository yet. See [models/README.md](models/README.md).
-3. Open PowerShell in the project folder.
-4. Create and activate a virtual environment:
+1. Download or clone this repository.
+2. Open PowerShell in the project folder.
+3. Create and activate a virtual environment:
 
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 ```
 
-5. Install dependencies:
+4. Install the pinned ML dependencies:
 
 ```powershell
 python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-6. Launch the application:
+5. Launch the application:
 
 ```powershell
 python hinglish_desktop_app.py
 ```
 
-You can also double-click `Launch_Hinglish_Classifier.bat`.
+You can also double-click `Launch_Hinglish_Classifier.bat`. The launcher automatically uses `.venv` when it exists.
 
 ## Model and evaluation
 
-The desktop application uses the three-class COMI-LINGUA model with an English probability threshold of `0.75`. The threshold was selected on the development split and evaluated on the COMI-LINGUA held-out test split.
+The desktop application uses the included **three-class COMI-LINGUA model** with an English probability threshold of `0.75`. The threshold was selected on the development/validation split and then evaluated on the official held-out COMI-LINGUA test split.
 
 | Metric | Result |
 |---|---:|
@@ -70,24 +92,26 @@ The desktop application uses the three-class COMI-LINGUA model with an English p
 | English recall | 92.13% |
 | English F1 | 92.89% |
 
-The full evaluation report is in `models/comi_lingua_augmented_final_test_report.json`. These results measure agreement with the dataset's consensus labels; they do not guarantee equivalent performance on every real-world source, dialect, spelling style, or domain.
+The full report is in `models/comi_lingua_augmented_final_test_report.json`. These results measure agreement with the dataset's consensus labels; they do not guarantee the same performance on every real-world source, dialect, spelling style, or domain.
 
 ## Training and data
 
-Training scripts are included for research reproducibility, but the training corpora and local annotation files are **not** bundled. The COMI-LINGUA dataset can be downloaded from the maintainer's Hugging Face dataset repository using:
+The supplied model is ready for desktop inference. Training scripts are included for research reproducibility, but the training corpora and local annotation files are **not** bundled.
+
+The COMI-LINGUA dataset can be downloaded from the maintainer's Hugging Face dataset repository using:
 
 ```powershell
 python download_comi_lingua.py
 python convert_comi_lingua.py
 ```
 
-Further processing, splitting, training, threshold tuning, and evaluation scripts are provided at the project root. Some augmented training scripts also expect local annotation inputs described in their source; those local working files are intentionally not committed. See [data/README.md](data/README.md).
+Further processing, splitting, training, threshold tuning, and evaluation scripts are provided at the project root. The augmented training script also expects local annotation inputs described in its source; those private/local working files are intentionally not committed. See `data/README.md`.
 
 ## Dataset attribution
 
-The project uses the COMI-LINGUA Hindi-English language-identification dataset from the Lingo Research Group at IIT Gandhinagar. The dataset is declared under **Creative Commons Attribution 4.0 International (CC BY 4.0)**. Dataset files are not redistributed here. Download them from the official source and follow its attribution and citation requirements.
+The project uses the COMI-LINGUA Hindi-English language-identification dataset from the Lingo Research Group at IIT Gandhinagar. The dataset is declared under **Creative Commons Attribution 4.0 International (CC BY 4.0)**. The dataset files are not redistributed here; download them from the official source and follow its attribution and citation requirements.
 
-Dataset: https://huggingface.co/datasets/LingoIITGN/COMI-LINGUA
+Dataset: <https://huggingface.co/datasets/LingoIITGN/COMI-LINGUA>
 
 Citation:
 
@@ -105,10 +129,9 @@ Citation:
 
 - This is a research/academic desktop prototype, not a production language-identification service.
 - Short, ambiguous tokens, spelling variation, named entities, and domain-specific vocabulary can be difficult to classify.
-- The model predicts English/Hindi/Other token labels; it does not perform translation, transliteration, sentiment analysis, or sentence-level semantic understanding.
-- The desktop app uses the COMI-LINGUA three-class model. Separate binary English/Hindi experiments are not part of this desktop inference path.
-- Some evaluation data and error diagnostics were reviewed during development; do not describe those results as an entirely untouched external benchmark.
+- The included model is trained for English/Hindi/Other token labels; it does not perform translation, transliteration, sentiment analysis, or sentence-level semantic understanding.
+- The app uses the COMI-LINGUA three-class model. Separate binary English/Hindi experiments are not part of this desktop inference path.
 
 ## License
 
-No open-source license has been selected for the project code yet. Dataset rights are separate and governed by the dataset's own license. Add a code license only after deciding how you want others to reuse the project.
+No open-source license has been selected for the project code in this repository yet. Dataset rights remain separate and are governed by the dataset's own license. Add a code license only after deciding how you want others to reuse the project.

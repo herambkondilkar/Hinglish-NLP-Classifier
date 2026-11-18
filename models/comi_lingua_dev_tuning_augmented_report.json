@@ -1,0 +1,408 @@
+{
+  "dataset": "COMI-LINGUA development tuning with local manual augmentation",
+  "fit_rows": 407719,
+  "fit_sentence_count": 21470,
+  "validation_rows": 101790,
+  "validation_sentence_count": 5273,
+  "fit_validation_sentence_overlap": 0,
+  "class_weights": {
+    "en": 1.508612045393157,
+    "other": 3.692003296116197,
+    "hi": 0.4839607199366619
+  },
+  "epochs": 3,
+  "batch_size": 2048,
+  "baseline_argmax": {
+    "accuracy": 0.937734551527655,
+    "en_precision": 0.8014667168108311,
+    "en_recall": 0.9584870018889988,
+    "en_f1": 0.872972308700639,
+    "macro_f1": 0.9255115914343293,
+    "report": {
+      "en": {
+        "precision": 0.8014667168108311,
+        "recall": 0.9584870018889988,
+        "f1-score": 0.872972308700639,
+        "support": 22234.0
+      },
+      "hi": {
+        "precision": 0.9917817773801761,
+        "recall": 0.9305193973795399,
+        "f1-score": 0.9601743930007927,
+        "support": 70293.0
+      },
+      "other": {
+        "precision": 0.9441020650881177,
+        "recall": 0.9426751592356688,
+        "f1-score": 0.9433880726015558,
+        "support": 9263.0
+      },
+      "accuracy": 0.937734551527655,
+      "macro avg": {
+        "precision": 0.912450186426375,
+        "recall": 0.9438938528347359,
+        "f1-score": 0.9255115914343293,
+        "support": 101790.0
+      },
+      "weighted avg": {
+        "precision": 0.9458723340983198,
+        "recall": 0.937734551527655,
+        "f1-score": 0.9395992596066699,
+        "support": 101790.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        21311,
+        496,
+        427
+      ],
+      [
+        4794,
+        65409,
+        90
+      ],
+      [
+        485,
+        46,
+        8732
+      ]
+    ],
+    "false_positive_en": 5279,
+    "false_negative_en": 923
+  },
+  "threshold_results": [
+    {
+      "english_threshold": 0.3,
+      "accuracy": 0.9069162000196483,
+      "english_precision": 0.7112759254397479,
+      "english_recall": 0.9748133489250698,
+      "english_f1": 0.8224490570333548,
+      "macro_f1": 0.8957179960219896,
+      "false_positive_english": 8798,
+      "false_negative_english": 560,
+      "confusion_matrix": [
+        [
+          21674,
+          193,
+          367
+        ],
+        [
+          7961,
+          62254,
+          78
+        ],
+        [
+          837,
+          39,
+          8387
+        ]
+      ]
+    },
+    {
+      "english_threshold": 0.35,
+      "accuracy": 0.9169957756164653,
+      "english_precision": 0.7375145180023229,
+      "english_recall": 0.9710353512638301,
+      "english_f1": 0.838316378038363,
+      "macro_f1": 0.9053767092427255,
+      "false_positive_english": 7684,
+      "false_negative_english": 644,
+      "confusion_matrix": [
+        [
+          21590,
+          262,
+          382
+        ],
+        [
+          6960,
+          63252,
+          81
+        ],
+        [
+          724,
+          40,
+          8499
+        ]
+      ]
+    },
+    {
+      "english_threshold": 0.4,
+      "accuracy": 0.9260831122900088,
+      "english_precision": 0.763382081499361,
+      "english_recall": 0.9672573536025906,
+      "english_f1": 0.8533111137562989,
+      "macro_f1": 0.9142255127772579,
+      "false_positive_english": 6666,
+      "false_negative_english": 728,
+      "confusion_matrix": [
+        [
+          21506,
+          332,
+          396
+        ],
+        [
+          6048,
+          64158,
+          87
+        ],
+        [
+          618,
+          43,
+          8602
+        ]
+      ]
+    },
+    {
+      "english_threshold": 0.45,
+      "accuracy": 0.9328323017978191,
+      "english_precision": 0.784670061920639,
+      "english_recall": 0.9632094989655483,
+      "english_f1": 0.8648212086336745,
+      "macro_f1": 0.9206368970364771,
+      "false_positive_english": 5877,
+      "false_negative_english": 818,
+      "confusion_matrix": [
+        [
+          21416,
+          408,
+          410
+        ],
+        [
+          5331,
+          64866,
+          96
+        ],
+        [
+          546,
+          46,
+          8671
+        ]
+      ]
+    },
+    {
+      "english_threshold": 0.5,
+      "accuracy": 0.9391001080656253,
+      "english_precision": 0.8063770969818609,
+      "english_recall": 0.9577224071242242,
+      "english_f1": 0.8755576571205361,
+      "macro_f1": 0.9269515203192559,
+      "false_positive_english": 5113,
+      "false_negative_english": 940,
+      "confusion_matrix": [
+        [
+          21294,
+          511,
+          429
+        ],
+        [
+          4654,
+          65543,
+          96
+        ],
+        [
+          459,
+          50,
+          8754
+        ]
+      ]
+    },
+    {
+      "english_threshold": 0.55,
+      "accuracy": 0.9444346202966892,
+      "english_precision": 0.8270200539462883,
+      "english_recall": 0.9515156966807592,
+      "english_f1": 0.8849105929101746,
+      "macro_f1": 0.9317791286112692,
+      "false_positive_english": 4425,
+      "false_negative_english": 1078,
+      "confusion_matrix": [
+        [
+          21156,
+          625,
+          453
+        ],
+        [
+          4014,
+          66179,
+          100
+        ],
+        [
+          411,
+          53,
+          8799
+        ]
+      ]
+    },
+    {
+      "english_threshold": 0.6,
+      "accuracy": 0.9489046075252972,
+      "english_precision": 0.8467309321179365,
+      "english_recall": 0.9441845821714492,
+      "english_f1": 0.8928062602334829,
+      "macro_f1": 0.9361646158573045,
+      "false_positive_english": 3800,
+      "false_negative_english": 1241,
+      "confusion_matrix": [
+        [
+          20993,
+          764,
+          477
+        ],
+        [
+          3454,
+          66735,
+          104
+        ],
+        [
+          346,
+          56,
+          8861
+        ]
+      ]
+    },
+    {
+      "english_threshold": 0.65,
+      "accuracy": 0.9521662245800177,
+      "english_precision": 0.8644659709807508,
+      "english_recall": 0.9351893496446884,
+      "english_f1": 0.8984380063516754,
+      "macro_f1": 0.9390881428253607,
+      "false_positive_english": 3260,
+      "false_negative_english": 1441,
+      "confusion_matrix": [
+        [
+          20793,
+          941,
+          500
+        ],
+        [
+          2955,
+          67229,
+          109
+        ],
+        [
+          305,
+          59,
+          8899
+        ]
+      ]
+    },
+    {
+      "english_threshold": 0.7,
+      "accuracy": 0.9545141958935063,
+      "english_precision": 0.8831056917575079,
+      "english_recall": 0.9218314293424485,
+      "english_f1": 0.9020531214928592,
+      "macro_f1": 0.9409912965117986,
+      "false_positive_english": 2713,
+      "false_negative_english": 1738,
+      "confusion_matrix": [
+        [
+          20496,
+          1208,
+          530
+        ],
+        [
+          2451,
+          67727,
+          115
+        ],
+        [
+          262,
+          64,
+          8937
+        ]
+      ]
+    },
+    {
+      "english_threshold": 0.75,
+      "accuracy": 0.9561548285686217,
+      "english_precision": 0.9020819341840162,
+      "english_recall": 0.9061797247458847,
+      "english_f1": 0.9041261863627185,
+      "macro_f1": 0.9421003132013187,
+      "false_positive_english": 2187,
+      "false_negative_english": 2086,
+      "confusion_matrix": [
+        [
+          20148,
+          1513,
+          573
+        ],
+        [
+          1973,
+          68197,
+          123
+        ],
+        [
+          214,
+          67,
+          8982
+        ]
+      ]
+    }
+  ],
+  "selected_threshold": 0.75,
+  "selected_validation_metrics": {
+    "accuracy": 0.9561548285686217,
+    "en_precision": 0.9020819341840162,
+    "en_recall": 0.9061797247458847,
+    "en_f1": 0.9041261863627185,
+    "macro_f1": 0.9421003132013187,
+    "report": {
+      "en": {
+        "precision": 0.9020819341840162,
+        "recall": 0.9061797247458847,
+        "f1-score": 0.9041261863627185,
+        "support": 22234.0
+      },
+      "hi": {
+        "precision": 0.9773564355016696,
+        "recall": 0.9701819526837665,
+        "f1-score": 0.9737559791532805,
+        "support": 70293.0
+      },
+      "other": {
+        "precision": 0.9280843149411035,
+        "recall": 0.9696642556407211,
+        "f1-score": 0.9484187740879574,
+        "support": 9263.0
+      },
+      "accuracy": 0.9561548285686217,
+      "macro avg": {
+        "precision": 0.9358408948755965,
+        "recall": 0.9486753110234574,
+        "f1-score": 0.9421003132013187,
+        "support": 101790.0
+      },
+      "weighted avg": {
+        "precision": 0.9564304023446873,
+        "recall": 0.9561548285686217,
+        "f1-score": 0.9562410234265348,
+        "support": 101790.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        20148,
+        1513,
+        573
+      ],
+      [
+        1973,
+        68197,
+        123
+      ],
+      [
+        214,
+        67,
+        8982
+      ]
+    ],
+    "false_positive_en": 2187,
+    "false_negative_en": 2086
+  },
+  "threshold_selection_note": "Selected on validation as highest English precision among tested thresholds with English recall >= 0.85; ties break by macro F1, then accuracy.",
+  "note": "Threshold selection uses development validation only. These selected metrics are not a final test score. The official COMI-LINGUA test file was not accessed by this script."
+}

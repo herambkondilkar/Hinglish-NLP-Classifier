@@ -1,0 +1,30 @@
+# Python environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# IDE and local settings
+.vscode/
+.idea/
+.env
+.env.*
+*.log
+.DS_Store
+Thumbs.db
+
+# Large source and processed datasets (download locally)
+data/raw/
+data/processed/
+data/backups/
+data/*.csv
+
+# Large diagnostics and temporary model artifacts
+models/*predictions*.csv
+models/*errors*.csv
+models/*_thresholds*.csv
+# Keep only the model used by the desktop app
+models/*.joblib
+!models/comi_lingua_dev_tuned_augmented.joblib

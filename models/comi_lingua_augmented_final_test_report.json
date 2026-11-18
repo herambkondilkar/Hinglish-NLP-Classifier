@@ -1,0 +1,142 @@
+{
+  "dataset": "COMI-LINGUA official test split; augmented candidate",
+  "test_file": "test_tokens.csv",
+  "test_tokens": 106993,
+  "test_label_counts": {
+    "en": 27930,
+    "other": 9296,
+    "hi": 69767
+  },
+  "threshold_selected_on_validation": 0.75,
+  "default_argmax_metrics": {
+    "accuracy": 0.9515669249390147,
+    "macro_f1": 0.9476935668612106,
+    "weighted_f1": 0.9524291103408807,
+    "classification_report": {
+      "en": {
+        "precision": 0.8623992894753537,
+        "recall": 0.9734335839598998,
+        "f1-score": 0.9145586652314317,
+        "support": 27930.0
+      },
+      "hi": {
+        "precision": 0.9896908765760486,
+        "recall": 0.9439563117233076,
+        "f1-score": 0.9662827378768982,
+        "support": 69767.0
+      },
+      "other": {
+        "precision": 0.9822949350067235,
+        "recall": 0.9429862306368331,
+        "f1-score": 0.9622392974753019,
+        "support": 9296.0
+      },
+      "accuracy": 0.9515669249390147,
+      "macro avg": {
+        "precision": 0.944795033686042,
+        "recall": 0.9534587087733467,
+        "f1-score": 0.9476935668612106,
+        "support": 106993.0
+      },
+      "weighted avg": {
+        "precision": 0.9558194391871461,
+        "recall": 0.9515669249390147,
+        "f1-score": 0.9524291103408807,
+        "support": 106993.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        27188,
+        641,
+        101
+      ],
+      [
+        3853,
+        65857,
+        57
+      ],
+      [
+        485,
+        45,
+        8766
+      ]
+    ],
+    "label_order": [
+      "en",
+      "hi",
+      "other"
+    ],
+    "english_precision": 0.8623992894753537,
+    "english_recall": 0.9734335839598998,
+    "english_f1": 0.9145586652314317,
+    "false_positive_english": 4338,
+    "false_negative_english": 742
+  },
+  "frozen_threshold_metrics": {
+    "accuracy": 0.9616516968399802,
+    "macro_f1": 0.955524749173068,
+    "weighted_f1": 0.9615587693249402,
+    "classification_report": {
+      "en": {
+        "precision": 0.9365287331222477,
+        "recall": 0.9213390619405657,
+        "f1-score": 0.9288718032017615,
+        "support": 27930.0
+      },
+      "hi": {
+        "precision": 0.9717332116944393,
+        "recall": 0.9771095216936374,
+        "f1-score": 0.9744139508290451,
+        "support": 69767.0
+      },
+      "other": {
+        "precision": 0.9598419310050198,
+        "recall": 0.9667598967297762,
+        "f1-score": 0.9632884934883971,
+        "support": 9296.0
+      },
+      "accuracy": 0.9616516968399802,
+      "macro avg": {
+        "precision": 0.9560346252739023,
+        "recall": 0.9550694934546597,
+        "f1-score": 0.955524749173068,
+        "support": 106993.0
+      },
+      "weighted avg": {
+        "precision": 0.9615100902583626,
+        "recall": 0.9616516968399802,
+        "f1-score": 0.9615587693249402,
+        "support": 106993.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        25733,
+        1907,
+        290
+      ],
+      [
+        1511,
+        68170,
+        86
+      ],
+      [
+        233,
+        76,
+        8987
+      ]
+    ],
+    "label_order": [
+      "en",
+      "hi",
+      "other"
+    ],
+    "english_precision": 0.9365287331222477,
+    "english_recall": 0.9213390619405657,
+    "english_f1": 0.9288718032017615,
+    "false_positive_english": 1744,
+    "false_negative_english": 2197
+  },
+  "note": "The threshold was selected using the development validation split. No threshold was selected or adjusted using this test evaluation. The original dataset labels may contain annotation ambiguity; results measure agreement with the converted consensus labels."
+}
